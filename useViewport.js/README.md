@@ -2,7 +2,7 @@
 
 Ejemplo
 
-    **En App.js**
+**En App.js**
 ```
     import { ViewportProvider } from './hooks/useViewport';
 
@@ -14,7 +14,7 @@ Ejemplo
     );
     }
 ```
-    **En My Component**
+**En My Component**
 ```
     import { useViewport } from '../../hooks/useViewport';
 
