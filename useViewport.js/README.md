@@ -2,11 +2,26 @@
 
 Ejemplo
 
+    **En App.js**
 ```
-    const { width } = useViewport();
-    const breakpoint = width <= 600;
+    import { ViewportProvider } from './hooks/useViewport';
 
+    export default function App() {
     return (
-        { breakpoint ? <ReactComponent /> : <OtherComponent /> }
-    )
+        <ViewportProvider>
+            <MyComponent />
+        </ViewportProvider>
+    );
+    }
+```
+    **En My Component**
+```
+    import { useViewport } from '../../hooks/useViewport';
+
+    const MyComponent = () => {
+        const { width, height } = useViewport();
+        const breakpoint = 620;
+
+        return width < breakpoint ? <MobileComponent /> : <DesktopComponent />;
+    };
 ```
